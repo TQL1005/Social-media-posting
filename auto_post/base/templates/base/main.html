@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        img {
+            height: 18%;
+            width: 10%;
+        }
+        .Post-block, form {
+            width: 100%;
+            max-width: 400px;
+        }
+        .Post-block form, form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .Post-block form textarea, form button {
+            width: 100%;
+        }
+        a {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <img src="{{user.socialaccount_set.all.0.get_avatar_url}}" />
+    <p>Full Name : {{user.socialaccount_set.all.0.extra_data.name}}</p>
+    <div class="Post-block">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.text }}
+            <button type="submit" value="Submit">Submit</button>
+        </form>
+    </div>
+
+     {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        <a href="/logout" type="button">Logout</a>
+    </form>
+</body>
+</html>
