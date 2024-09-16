@@ -1,4 +1,0 @@
-import facebook as fb
-api = "EAAQy7lT7HjEBO2QEfzA8bRJ9ZCQOii4JQoNZAxFBZArm7w8QfAbkbfpCmml5fLDa6qOv03mk4JvR4Idc4HynwMP4IqTZBkLdDgIy4OinEBZBjuNxDD4GAikHgmyL4rk3YikCgqjzIQndCNtsWA8vp7moZAZBMlpg1D5LZAntwIZAWZC7olOG8OAK9SZCgb9j6EEZBALJ"
-api1 = fb.GraphAPI(api)
-api1.put_object("me","feed",message="teststs")
