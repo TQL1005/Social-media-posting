@@ -1,0 +1,5 @@
+python main.py --file="test.mp4" --title="Summer vacation in California" --description="Had fun surfing in Santa Cruz" --keywords="surfing,Santa Cruz" --category="1" --privacyStatus="private"
+
+
+change privacyStatus if want to public 
+category: https://mixedanalytics.com/blog/list-of-youtube-video-category-ids/
